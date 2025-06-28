@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hindalco IT Asset Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div id="signupPage" class="card">
+        <h2>Sign Up</h2>
+        <input type="text" id="newUsername" placeholder="Create username" />
+        <div class="password-wrapper">
+            <input type="password" id="newPassword" placeholder="Create password" />
+            <span onclick="togglePassword('newPassword')" class="toggle-eye">👁️</span>
+        </div>
+        <button onclick="signup()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+
+    <div id="loginPage" class="card hidden">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password" />
+            <span onclick="togglePassword('password')" class="toggle-eye">👁️</span>
+        </div>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+    </div>
+
+
+    <div id="trackerPage" class="hidden">
+        <h1>Hindalco IT Asset Tracker</h1>
+
+        <form id="assetForm">
+            <select name="type" required>
+                <option>Laptop</option>
+                <option>Desktop</option>
+                <option>Printer</option>
+            </select>
+            <input type="text" name="serial" placeholder="Serial Number" required />
+            <input type="text" name="owner" placeholder="Owner" required />
+            <input type="text" name="location" placeholder="Location" required />
+            <input type="text" name="warranty" placeholder="Warranty" required />
+            <select name="condition">
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+            </select>
+            <button type="submit">Save</button>
+        </form>
+
+        <div class="filters">
+            <label>Filter by Type:</label>
+            <select id="filter">
+                <option value="All">All</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Desktop">Desktop</option>
+                <option value="Printer">Printer</option>
+            </select>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Serial Number</th>
+                    <th>Owner</th>
+                    <th>Location</th>
+                    <th>Warranty</th>
+                    <th>Condition</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="assetTable"></tbody>
+        </table>
+
+        <button id="exportBtn">Export to CSV</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

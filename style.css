@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.card,
+form,
+table {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+input,
+select,
+button {
+    margin: 5px;
+    padding: 8px;
+    width: calc(100% - 20px);
+    max-width: 300px;
+}
+
+button {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.password-wrapper {
+    position: relative;
+    width: calc(100% - 20px);
+    max-width: 300px;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 30px;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
